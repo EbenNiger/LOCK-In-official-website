@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOCK IN | Affordable CRM for Hustlers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --dark-blue: #0b1d3b;
+    --accent-blue: #1e3a8a;
+    --neon-green: #a7f3d0;
+    --gold: #fbbf24;
+    --white: #ffffff;
+    --muted-white: rgba(255,255,255,0.7);
+    --radius-md: 16px;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--dark-blue);
+    color: var(--white);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--neon-green);
+    text-decoration: none;
+}
+
+section {
+    padding: var(--space-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.hero-title {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--neon-green) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--muted-white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.founder-message {
+    background: rgba(30, 58, 138, 0.2);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+}
+
+.founder-message p {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+}
+
+.demo-section {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.demo-section a {
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: var(--neon-green);
+    color: var(--dark-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    display: inline-block;
+    margin-top: var(--space-md);
+    transition: all 0.3s ease;
+}
+
+.demo-section a:hover {
+    transform: translateY(-2px);
+}
+
+.form-section {
+    background: rgba(30,58,138,0.2);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.form-section h2 {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+}
+
+.form-section input[type="email"] {
+    width: 80%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+    border: none;
+    margin-bottom: var(--space-md);
+}
+
+.form-section button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--neon-green);
+    color: var(--dark-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-section button:hover {
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: var(--space-md);
+    color: var(--muted-white);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1 class="hero-title">LOCK IN</h1>
+    <p class="hero-subtitle">Your CRM shouldn’t cost your first client. Built for hustlers who grind smart and stay locked in.</p>
+</section>
+
+<!-- Founder Message -->
+<section class="founder-message">
+    <p>CRMs shouldn’t be expensive. LOCK IN is built so anyone, even without paying leads, can afford a simple, easy-to-use CRM that helps online hustlers stay focused and win.</p>
+    <p>— Ebenezer, Founder of LOCK IN</p>
+</section>
+
+<!-- Demo Section -->
+<section class="demo-section">
+    <p>Check out the app and test it yourself!</p>
+    <p>Use <strong>TEST123</strong> as the signup code for a test run.</p>
+    <a href="https://ebenniger.github.io/my-crm-app/" target="_blank">Try the Demo</a>
+</section>
+
+<!-- Email Signup Form -->
+<section class="form-section">
+    <h2>Join the Waitlist</h2>
+    <form name="lock-in-signup" method="POST" netlify>
+        <input type="hidden" name="form-name" value="lock-in-signup">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <br>
+        <button type="submit">Sign Up</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    © 2025 LOCK IN | Built by Entreprompter
+</footer>
+
+</body>
+</html>
