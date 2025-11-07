@@ -36,14 +36,9 @@
     --radius-lg: 20px;
     --radius-xl: 24px;
     --radius-2xl: 28px;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
-    --shadow-glow: 0 0 30px rgba(167, 243, 208, 0.3);
 }
 
-/* Basic resets */
+/* Reset & Body */
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
     font-family: var(--font-primary);
@@ -51,15 +46,14 @@ body {
     color: var(--pure-white);
     position: relative;
     overflow-x: hidden;
-    background: url('https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center/cover;
+    background: linear-gradient(to bottom, #cce7ff 0%, #99d0ff 100%), 
+                url('https://images.pexels.com/photos/716399/pexels-photo-716399.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center/cover;
 }
-
-/* Overlay for readability */
 body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.3);
     z-index:0;
 }
 
@@ -139,6 +133,20 @@ button {
     margin-bottom:2rem;
     text-align:center;
 }
+.demo-section a {
+    display:inline-block;
+    margin-top:1rem;
+    padding:1rem 2rem;
+    background: linear-gradient(135deg, #5ac8fa 0%, #fbbf24 100%);
+    color: var(--true-black);
+    border-radius: var(--radius-lg);
+    font-weight:900;
+    text-decoration:none;
+    transition: all 0.3s ease;
+}
+.demo-section a:hover {
+    transform: translateY(-2px);
+}
 
 /* Founder Message */
 .founder-section {
@@ -148,6 +156,16 @@ button {
     color: var(--gold);
     font-size:1rem;
     line-height:1.5;
+}
+
+/* Footer */
+footer {
+    text-align:center;
+    padding:2rem 1rem;
+    color: var(--gold);
+    font-weight:600;
+    font-size:0.9rem;
+    margin-top:2rem;
 }
 </style>
 </head>
@@ -183,6 +201,7 @@ button {
     <section class="demo-section">
         <h2 class="section-title">Try the Demo</h2>
         <p class="section-text">Use <strong>TEST123</strong> as your signup code to experience LOCK IN firsthand.</p>
+        <a href="https://ebenniger.github.io/my-crm-app/" target="_blank">Open Demo</a>
     </section>
 
     <!-- Founder Message -->
@@ -190,12 +209,12 @@ button {
         <p><strong>Ebenezer - Founder of LOCK IN:</strong> CRM shouldn’t be expensive. Even someone without paying leads should afford it. LOCK IN is simple, easy to use, and built for hustlers who want results without complications. Stay motivated, grind hard, and never give up!</p>
     </section>
 
-    <!-- Footer -->
-    <footer style="text-align:center; padding:2rem 1rem; color:var(--gold); font-size:0.9rem; margin-top:4rem;">
-        <p>©2025 LOCK-IN made by Enterprompter</p>
-    </footer>
+</div>
 
-</div> <!-- end of container -->
+<!-- Footer -->
+<footer>
+    ©2025 LOCK-IN made by Enterpromoter
+</footer>
 
 </body>
-</html>
+    </html>
