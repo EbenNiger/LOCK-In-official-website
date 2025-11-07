@@ -4,199 +4,198 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOCK IN - CRM for Online Hustlers</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-/* --- Root Variables --- */
 :root {
     --neon-green: #a7f3d0;
     --emerald: #10b981;
+    --lime: #84cc16;
+    --electric-purple: #7c3aed;
+    --violet: #8b5cf6;
+    --deep-purple: #6d28d9;
     --gold: #fbbf24;
+    --amber: #f59e0b;
     --true-black: #000000;
-    --muted-white: rgba(255,255,255,0.7);
-    --white: #ffffff;
-    --radius-md: 16px;
+    --dark-gray: #0a0a0f;
+    --card-bg: #141419;
+    --border-dark: rgba(167, 243, 208, 0.1);
+    --pure-white: #ffffff;
+    --off-white: rgba(255, 255, 255, 0.9);
+    --muted-white: rgba(255, 255, 255, 0.6);
+    --ghost-white: rgba(255, 255, 255, 0.3);
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Space Grotesk', monospace;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
     --space-md: 1rem;
     --space-lg: 1.5rem;
-    --glow: 0 0 20px var(--neon-green), 0 0 40px rgba(167,243,208,0.5);
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    --radius-2xl: 28px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 30px rgba(167, 243, 208, 0.3);
 }
 
-/* --- Fonts & Body --- */
+/* Basic resets */
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
-    font-family: 'Inter', sans-serif;
-    background: url('https://images.unsplash.com/photo-1616627988726-b0e4974e2d4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29ya2Zsb3klMjBvZmZpY2V8fDB8fHx8MTY5OTE4OTUyNg&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center fixed;
-    background-size: cover;
-    color: var(--white);
-    margin:0;
-    padding:0;
-    min-height:100vh;
-    overflow-x:hidden;
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    color: var(--pure-white);
     position: relative;
+    overflow-x: hidden;
+    background: url('https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center/cover;
 }
 
-/* --- Animated Grid --- */
+/* Overlay for readability */
 body::before {
-    content:'';
-    position:fixed;
-    inset:0;
-    background-image: linear-gradient(rgba(167,243,208,0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(167,243,208,0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
     z-index:0;
-    animation: gridMove 20s linear infinite;
 }
 
-@keyframes gridMove {
-    0% {transform:translate(0,0);}
-    100% {transform:translate(50px,50px);}
-}
-
-/* --- Floating Orbs --- */
-body::after {
-    content:'';
-    position:fixed;
-    top:-300px; right:-300px;
-    width:800px; height:800px;
-    background: radial-gradient(circle, rgba(167,243,208,0.08) 0%, transparent 70%);
-    border-radius:50%;
-    z-index:0;
-    animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%,100%{transform:translate(0,0) scale(1);}
-    33%{transform:translate(-150px,100px) scale(1.1);}
-    66%{transform:translate(100px,-50px) scale(0.9);}
-}
-
-/* --- Hero Section --- */
-.hero-title {
-    font-family: 'Space Grotesk', monospace;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 900;
-    background: linear-gradient(135deg, var(--neon-green) 0%, var(--gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: var(--space-md);
-    text-align:center;
-    animation: pulseGlow 2s infinite;
-}
-
-@keyframes pulseGlow {
-    0%,100% { text-shadow: 0 0 20px var(--neon-green), 0 0 40px rgba(167,243,208,0.5);}
-    50% { text-shadow: 0 0 30px var(--neon-green), 0 0 60px rgba(167,243,208,0.7);}
-}
-
-.subtitle {
-    text-align:center;
-    color: var(--muted-white);
-    margin-bottom: var(--space-lg);
-}
-
-/* --- Sections --- */
-section {
-    padding: var(--space-lg);
-    backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.5);
-    margin: 2rem auto;
-    border-radius: var(--radius-md);
-    max-width: 800px;
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
     position: relative;
     z-index:1;
 }
 
-/* --- Input & Button --- */
-.input {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: var(--space-md);
-    border-radius: var(--radius-md);
-    border: 2px solid rgba(167,243,208,0.3);
-    background: rgba(0,0,0,0.6);
-    color: var(--neon-green);
-    font-weight:700;
-    text-transform: uppercase;
-    font-family: 'Space Grotesk', monospace;
-    font-size:1.2rem;
-}
-
-.input:focus {
-    outline:none;
-    border-color: var(--neon-green);
-    box-shadow: 0 0 10px var(--neon-green);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--neon-green), var(--emerald));
-    border:none;
-    padding: 1rem 2rem;
-    border-radius: var(--radius-md);
-    color: var(--true-black);
+/* Hero Section */
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem,5vw,4rem);
     font-weight:900;
+    background: linear-gradient(135deg, #5ac8fa 0%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing:-0.03em;
+}
+.hero-subtitle {
+    color: var(--gold);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight:600;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+.section-text {
+    color: var(--pure-white);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height:1.5;
+}
+
+/* Netlify Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+input[type="email"] {
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    border: none;
+    font-size: 1rem;
+}
+button {
+    padding: 1rem;
+    border:none;
+    border-radius: var(--radius-lg);
+    font-weight:900;
+    font-size:1rem;
     cursor:pointer;
-    text-transform:uppercase;
-    width:100%;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #5ac8fa 0%, #fbbf24 100%);
+    color: var(--true-black);
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px var(--neon-green), 0 0 40px rgba(167,243,208,0.5);
+/* Demo Section */
+.demo-section {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    margin-bottom:2rem;
+    text-align:center;
 }
 
-/* --- Founder Message --- */
-.founder-message {
+/* Founder Message */
+.founder-section {
+    background: rgba(0,0,0,0.5);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    color: var(--gold);
     font-size:1rem;
     line-height:1.5;
-    text-align:center;
-    font-weight:600;
-    color: var(--muted-white);
-}
-
-/* --- Stagger Animations --- */
-.stagger-item {
-    opacity:0;
-    animation: slideIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-.stagger-item:nth-child(1) { animation-delay:0.1s; }
-.stagger-item:nth-child(2) { animation-delay:0.3s; }
-.stagger-item:nth-child(3) { animation-delay:0.5s; }
-
-@keyframes slideIn {
-    from {opacity:0; transform: translateY(20px);}
-    to {opacity:1; transform: translateY(0);}
 }
 </style>
 </head>
 <body>
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <h1 class="hero-title stagger-item">LOCK IN</h1>
-  <p class="subtitle stagger-item">CRM made simple, affordable, and designed for online hustlers who win.</p>
-</section>
+<div class="container">
 
-<!-- Demo Section -->
-<section class="demo-section">
-  <p class="stagger-item">Check the app out — use code <strong>TEST123</strong> for a test run.</p>
-  <a href="https://ebenniger.github.io/my-crm-app/" target="_blank" class="btn-primary stagger-item">Try Demo</a>
-</section>
+    <!-- Hero -->
+    <section class="hero">
+        <h1 class="hero-title">LOCK IN</h1>
+        <p class="hero-subtitle">The CRM for online hustlers who win</p>
+    </section>
 
-<!-- Signup Form Section -->
-<section class="form-section">
-  <h2 class="stagger-item">Sign Up to LOCK IN</h2>
-  <p class="subtitle stagger-item">Get instant access to the CRM. No expensive plans, just results.</p>
+    <!-- Who is this app for -->
+    <section class="who-for">
+        <h2 class="section-title">Who is LOCK IN for?</h2>
+        <p class="section-text">
+            LOCK IN isn't just a tool, it's a mentality. It's for online hustlers who love simplicity, easy setups, no overbearing cost, and a clean straightforward platform to build their online cash-printing businesses.
+        </p>
+    </section>
 
-  <form name="lock-in-signup" method="POST" data-netlify="true" class="stagger-item">
-    <input type="email" name="email" class="input" placeholder="Your email" required>
-    <button type="submit" class="btn-primary">Sign Up</button>
-  </form>
-</section>
+    <!-- Signup Form -->
+    <section class="signup">
+        <h2 class="section-title">Sign up to access-NO to LOCK IN</h2>
+        <form name="lockin-signup" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="lockin-signup">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Join Now</button>
+        </form>
+    </section>
 
-<!-- Founder Message -->
-<section class="founder-message">
-  <p>"LOCK IN is for every online hustler who wants to win without breaking the bank. Simple, fast, and designed to help you lock in your leads and grow your business." — Ebenezer, Founder</p>
-</section>
+    <!-- Demo Section -->
+    <section class="demo-section">
+        <h2 class="section-title">Try the Demo</h2>
+        <p class="section-text">Use <strong>TEST123</strong> as your signup code to experience LOCK IN firsthand.</p>
+    </section>
+
+    <!-- Founder Message -->
+    <section class="founder-section">
+        <p><strong>Ebenezer - Founder of LOCK IN:</strong> CRM shouldn’t be expensive. Even someone without paying leads should afford it. LOCK IN is simple, easy to use, and built for hustlers who want results without complications. Stay motivated, grind hard, and never give up!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align:center; padding:2rem 1rem; color:var(--gold); font-size:0.9rem; margin-top:4rem;">
+        <p>©2025 LOCK-IN made by Enterprompter</p>
+    </footer>
+
+</div> <!-- end of container -->
 
 </body>
-    </html>
+</html>
